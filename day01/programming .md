@@ -69,7 +69,7 @@ int main() {
 > &#160; &#160; &#160; &#160; （3）依次遍历第一个字符串的字符，若其不在第二个字符串，则将该字符添加到上述新字符串中；若存在，则遍历下一个。<br>
 > &#160; &#160; &#160; &#160; 这种方法的时间复杂度为 `O(N)`，相对于上一种方法，其效率大幅提升。因为在这里，我们并不需要完整地去遍历第二个字符串才能判断出一个字符是否存在，而是直接去hashtable数组中查找一次即可。此外，在这种方法中并没有进行数据的挪动，而是将不存在的字符组合成一个新字符串作为结果输出。<br>
 
-- **代码：**<br>
+- **【代码】**<br>
 ```c++
 #include <iostream>
 #include <string>
@@ -82,12 +82,12 @@ int main() {
     getline(cin, str2);
      
     int hashTable[256]={0};
-    for(size_t i=0; i<str2.size(); ++i)
+    for(size_t i=0; i<str2.size(); ++i) //将第二个字符串中的字符映射到一个哈希表中
         hashTable[str2[i]]++;
      
-    string ret;
-    for(size_t i=0; i<str1.size(); ++i) {
-        if(hashTable[str1[i]] == 0)
+    string ret; //定义一个新字符串
+    for(size_t i=0; i<str1.size(); ++i) { //遍历第一个字符串
+        if(hashTable[str1[i]] == 0) //若在第二个字符串中不存在，则将其重新组合，作为最终的结果
             ret += str1[i];
     }
      
