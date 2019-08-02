@@ -54,7 +54,7 @@ int main() {
 
 ### 2. 标题：[倒置字符串](https://www.nowcoder.com/practice/ee5de2e7c45a46a090c1ced2fdc62355?tpId=85&&tqId=29867&rp=1&ru=/activity/oj&qru=/ta/2017test/question-ranking)
 - **【解题思路一】**<br>
-&#160; &#160; &#160; &#160; 先将整个字符串逆置过来，再遍历字符串，找出每个单词，对单词逆置。这里我们使用了stl算法中的reverse，所以这里使用迭代器遍历string。<br>
+&#160; &#160; &#160; &#160; 在原字符串中，从后往前寻找第一个空格，当遇到空格时，取出空格后面的单词，然后缩小范围继续寻找空格。按照这种方法，将单词逐个取出，并同时和之前的单词拼接成一个新字符串，从而作为结果输出。<br>
 
 - **【代码】**<br>
 ```c++
@@ -70,16 +70,16 @@ int main() {
         string tmp, ret;
         size_t end = str.size();
         while(1) {
-            size_t begin = str.rfind(' ', end-1);
+            size_t begin = str.rfind(' ', end-1); //从后往前找第一个空格
             if(begin == std::string::npos)
               break;
-            tmp = str.substr(begin+1, end-begin-1);
-            ret = ret + tmp + ' ';
-            end = begin;
+            tmp = str.substr(begin+1, end-begin-1); //将单词逐个取出来
+            ret = ret + tmp + " "; //和之前的单词进行拼接
+            end = begin; //缩小字符串范围
         }
          
-        tmp = str.substr(0, end);
-        ret += tmp;
+        tmp = str.substr(0, end); //将最后一个单词取出来
+        ret += tmp; //拼接
          
         cout << ret << endl;
     }
@@ -89,22 +89,58 @@ int main() {
 ```
 
 - **【解题思路二】**<br>
-&#160; &#160; &#160; &#160; 第二思路是一个比较讨巧的思路，直接利用cin>>s接收输入，遇到空格就结束了，自然就分割开了每个单词，其次将每次接收到的单词拼接到之前串的前面就逆置过来了<br>
+&#160; &#160; &#160; &#160; 先将整个字符串逆置过来，再遍历字符串，找出每个单词，并对单词进行逆置。
 
 - **【代码】**<br>
 ```c++
 #include <iostream>
 #include <string>
+#include <algorithm>
 
 using namespace std;
 
 int main() {
-	string s1, s2;
-	cin >> s2;
-	while (cin >> s1)
-	s2 = s1 + " " + s2;
-	cout << s2 << endl;
+	string str;
+	getline(cin, str);
+	
+	reverse(str.begin(), str.end()); //逆置原字符串
+	
+	auto begin = str.begin();
+	while (begin != str.end()) {
+		auto end = begin;
+		while (end !=str.end() && *end != ' ')
+			end++;
+		reverse(begin, end); //逆置单词
+		
+		if (end != str.end())
+			begin = end + 1;
+		else
+			break;
+	}
+	cout << str << endl;
 	
 	return 0;
+}
+```
+
+- **【解题思路三】**<br>
+&#160; &#160; &#160; &#160; 第三种思路是一个比较讨巧的思路，直接利用 `cin >> str` 接收字符串输入，由于 `cin` 遇到空格就结束了，所以通过这种方法自然就将字符串中的每个单词分割出来，最后再将每次分割出来的的单词拼接到之前单词的前面即可。<br>
+
+- **【代码】**<br>
+```c++
+#include <iostream>
+#include <string>
+ 
+using namespace std;
+ 
+int main() {
+    string str1, str2;
+    cin >> str2; //先将第一个单词分割出来
+    while(cin >> str1) {
+        str2 = str1 + " " + str2; //边分割边拼接
+    }
+    cout << str2 << endl;
+    
+    return 0;
 }
 ```
