@@ -57,7 +57,7 @@ struct A{
 > **【分析】**<br>
 > &#160; &#160; &#160; &#160; 通过题目可知，该结构体中含有位段，而位段的空间是按照需要以4个字节或1个字节的方式来开辟的。对该题来说，由于变量 a，b，c，d 的类型都为 unsigned，所以位段的空间以每次4个字节的方式开辟，具体空间分布如下图所示：<br>
 
-![ ]()
+![image](https://github.com/X-Perseverance/ProblemSet/blob/master/images/bitfield.png)
 
 ### 6.
 
