@@ -38,4 +38,22 @@ printf(“%d,%d\n”,*b,*(b+2));
 - [x] C. 2,4
 - [ ] D. 3,2
 
-### 5. 
+### 5. 在32位CPU上选择缺省对齐的情况下，有如下结构体定义，则 `sizeof(struct A)` 的值为（）
+```c
+struct A{
+	unsigned a : 19;
+	unsigned b : 11;
+	unsigned c : 4;
+	unsigned d : 29;
+	char index;
+};
+```
+
+- [ ] A. 9
+- [ ] B. 12
+- [ ] C. 16
+- [ ] D. 20
+
+
+### 6.
+
