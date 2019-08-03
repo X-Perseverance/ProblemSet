@@ -121,7 +121,7 @@ int main(void)
 	}
 	for(itor=array.begin();itor!=array.end();itor++)
 	{
-		cout<<*itor<<"";
+		cout << *itor << " ";
 	}
 	
 	return 0;
@@ -129,7 +129,7 @@ int main(void)
 ```
 
 - [ ] A. 100 300 300 300 300 500
-- [ ] B. 100 3OO 300 300 500
+- [ ] B. 100 300 300 300 500
 - [x] C. 100 300 300 500
 - [ ] D. 100 300 500
 - [ ] E. 100 500
