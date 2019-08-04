@@ -56,7 +56,7 @@ int main() {
 			m = -m;
 		}
 
-		while (m) { 按进制换算成对应的字符添加到字符串ret
+		while (m) { //按进制换算成对应的字符添加到字符串ret
 			ret += hashTable[m%n];
 			m /= n;
 		}
