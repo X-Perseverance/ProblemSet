@@ -42,7 +42,7 @@ void main()
 ```c
 int a[5] = {1, 3, 5, 7, 9};
 int *p = (int*)(&a+1);
-printf(“%d,%d”, *(a+1), *(p-1));
+printf("%d,%d", *(a+1), *(p-1));
 ```
 
 - [ ] A. 2,1
@@ -51,10 +51,10 @@ printf(“%d,%d”, *(a+1), *(p-1));
 - [ ] D. 运行时崩溃
 
 ### 5. 以下哪个选项一定可以将flag的第二个bit置0（）
-- [x] A. flag&=~2
-- [ ] B. flag|=2
-- [ ] C. flag^=2
-- [ ] D. flag>>=2
+- [x] A. flag &= ~2
+- [ ] B. flag |= 2
+- [ ] C. flag ^= 2
+- [ ] D. flag >>= 2
 
 ### 6. print()函数是一个类的常成员函数，它无返回值，下列表示中正确的是()
 - [ ] A. const void print();
@@ -86,37 +86,31 @@ printf(“%d,%d”, *(a+1), *(p-1));
 
 using namespace std;
 
-class A
-{
+class A {
 public:
-	A(char *s)
-	{
+	A(char *s) {
 		cout << s << endl;
 	}
 	~A() {}
 };
 
-class B :virtual public A
-{
+class B :virtual public A {
 public:
 	B(char *s1, char*s2) :A(s1) {
 		cout << s2 << endl;
 	}
 };
 
-class C :virtual public A
-{
+class C :virtual public A {
 public:
 	C(char *s1, char*s2) :A(s1) {
 		cout << s2 << endl;
 	}
 };
 
-class D :public B, public C
-{
+class D :public B, public C {
 public:
-	D(char *s1, char *s2, char *s3, char *s4) :B(s1, s2), C(s1, s3), A(s1)
-	{
+	D(char *s1, char *s2, char *s3, char *s4) :B(s1, s2), C(s1, s3), A(s1) {
 		cout << s4 << endl;
 	}
 };
