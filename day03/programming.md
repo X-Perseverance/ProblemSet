@@ -37,7 +37,7 @@ int main() {
 ### 2. 标题：[n个数里出现次数大于等于n/2的数](https://www.nowcoder.com/practice/eac8c671a0c345b38aa0c07aba40097b?tpId=85&&tqId=29866&rp=1&ru=/activity/oj&qru=/ta/2017test/question-ranking)
 - **【解题思路一】**<br>
 
-&#160; &#160; &#160; &#160; 在这里，我们可以构建一个`unordered_map`来进行解题。首先遍历全部数据，将这些数据和它们各自出现的次数按照key-value的形式一一添加到这个unordered_map中，接着从unordered_map中找出value不小于n/2的key即可。br>
+&#160; &#160; &#160; &#160; 在这里，我们可以构建一个`unordered_map`来进行解题。首先遍历全部数据，将这些数据和它们各自出现的次数按照key-value的形式一一添加到这个unordered_map中，接着从unordered_map中找出value不小于n/2的key即可。<br>
 
 - **【代码】**<br>
 ```c++
