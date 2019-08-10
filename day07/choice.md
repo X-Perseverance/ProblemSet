@@ -86,8 +86,8 @@ public:
 
 ### 9. 代码运行结果是（）
 ```c ++
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -117,40 +117,42 @@ int main() {
 ```
 
 - [ ] A. 21
-- [ ] B. 15
+- [x] B. 15
 - [ ] C. 9
 - [ ] D. 36
 
 ### 10. 下面程序的输出是什么（）
 ```c ++
 #include <iostream>
+
 using namespace std;
-class parent
-{
-int i;
+
+class parent {
+	int i;
 protected:
-int x;
+	int x;
 public:
-parent(){x=0;i=0;}
-void change(){x++;i++;}
-void display();
+	parent() {x=0; i=0;}
+	void change() {x++; i++;}
+	void display();
 };
-class son:public parent
-{
+
+class son :public parent {
 public:
-void modify();
+	void modify();
 };
-void parent::display(){cout<<"x="<<x<<endl;}
-void son:: modify() {x++;}
-int main()
-{
-son A; parent B;
-A.display();
-A.change();
-A.modify();
-A.display();
-B.change();
-B.display();
+
+void parent::display() {cout<<"x="<<x<<endl;}
+void son::modify() {x++;}
+
+int main() {
+	son A; parent B;
+	A.display();
+	A.change();
+	A.modify();
+	A.display();
+	B.change();
+	B.display();
 }
 ```
 
