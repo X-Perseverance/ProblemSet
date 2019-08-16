@@ -96,9 +96,8 @@ public:
         for( ; i<size; ++i) {
             if(!isdigit(str[i]))
                 return 0;
-				
-			//ret = ret*10 + str[i]-'0';
-            ret = (ret<<1) + (ret<<3) + (str[i]&0xf);
+
+            ret = (ret<<1) + (ret<<3) + (str[i]&0xf); //ret = ret*10 + str[i]-'0';
         }
 		
         return ret*flag;
