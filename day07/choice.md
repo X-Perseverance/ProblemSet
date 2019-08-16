@@ -16,12 +16,15 @@
 - [ ] C. `for(n=0; getchar()!='\n'; n++);`
 - [x] D. `n=0; for(ch=getchar(); ch!='\n'; n++);`
 
-### 4. 下列程序段执行后，输出d的值为（）
+> **【分析】**<br>
+> &#160; &#160; &#160; &#160; 在D选项中，`ch=getchar()`只会执行一次，所以无法统计。
+
+### 4. 下列程序段执行后，输出 d 的值为（）
 ```c
 void main()
 {
 	int a=1, b=0, c=-1, d=0;
-	d = ++a||++b&&++c;
+	d = ++a || ++b && ++c;
 	cout << d << endl;
 }
 ```
@@ -37,9 +40,9 @@ void main()
 
 int main()
 {
-	int a=1, b=2, c=3, d=0;
-	if(a == 1 && b++==2)
-		if(b!=2||c--!=3)
+	int a = 1, b = 2, c = 3, d = 0;
+	if (a == 1 && b++ == 2)
+		if (b != 2 || c-- != 3)
 			printf("%d,%d,%d\n", a, b, c);
 		else
 			printf("%d,%d,%d\n", a, b, c);
@@ -62,13 +65,13 @@ int main()
 
 ### 7. 有如下类模板定义，已知b1 b2是BigNumber的两个对象，则下列表达式中错误的是（）
 ```c ++
-template<class T> 
+template<class T>
 class BigNumber {
 	long　n;
 public:
-	BigNumber(T i):n(i) {}
+	BigNumber(T i) :n(i) {}
 	BigNumber operator+(BigNumber b) {
-		return　BigNumber(n+b.n);
+		return　BigNumber(n + b.n);
 	}
 };
 ```
@@ -78,13 +81,13 @@ public:
 - [ ] C. b1+b2
 - [x] D. 3+b1
 
-### 8. 假定一个类的构造函数为`A(int aa, int bb){a=aa--; b=a*bb;}`，则执行`A x(4,5);`语句后，x.a和x.b的值分别为（）
+### 8. 假定一个类的构造函数为`A(int aa, int bb){a=aa--; b=a*bb;}`，则执行`A x(4,5);`语句后，x.a 和 x.b 的值分别为（）
 - [ ] A. 20和5
 - [ ] B. 3和15
 - [ ] C. 5和4
 - [x] D. 4和20
 
-### 9. 代码运行结果是（）
+### 9. 下面代码运行结果是（）
 ```c ++
 #include <iostream>
 #include <string>
@@ -93,10 +96,10 @@ using namespace std;
 
 class A {
 	friend long fun(A s) {
-		if (s.x<3) {
+		if (s.x < 3) {
 			return 1;
 		}
-		return s.x+fun(A(s.x - 1));
+		return s.x + fun(A(s.x - 1));
 	}
 public:
 	A(long a) {
@@ -107,8 +110,8 @@ private:
 };
 
 int main() {
-	int sum=0;
-	for(int i=0; i<5; i++){
+	int sum = 0;
+	for (int i = 0; i < 5; i++) {
 		sum += fun(A(i));
 	}
 	cout << sum;
@@ -132,8 +135,8 @@ class parent {
 protected:
 	int x;
 public:
-	parent() {x=0; i=0;}
-	void change() {x++; i++;}
+	parent() { x = 0; i = 0; }
+	void change() { x++; i++; }
 	void display();
 };
 
@@ -142,17 +145,21 @@ public:
 	void modify();
 };
 
-void parent::display() {cout<<"x="<<x<<endl;}
-void son::modify() {x++;}
+void parent::display() { cout << "x=" << x << endl; }
+void son::modify() { x++; }
 
 int main() {
-	son A; parent B;
+	son A;
+	parent B;
+
 	A.display();
 	A.change();
 	A.modify();
 	A.display();
 	B.change();
 	B.display();
+
+	return 0;
 }
 ```
 
