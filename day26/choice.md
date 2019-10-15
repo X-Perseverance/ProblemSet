@@ -4,19 +4,22 @@
 - [ ] C. 10
 - [x] D. 11
 
-### 2. 在系统内存中设置磁盘缓冲区的主要目的是（）
+### 2. [在系统内存中设置磁盘缓冲区的主要目的是（）](https://www.nowcoder.com/questionTerminal/a728be91fefb4b3ba407135c044f5d2f?orderByHotValue=1&mutiTagIds=610&page=3&onlyReference=false)
 - [x] A. 减少磁盘 I/O 次数
 - [ ] B. 减少平均寻道时间
 - [ ] C. 提高磁盘数据可靠性
 - [ ] D. 实现设备无关性
 
-### 3. 下列选项中，会导致进程从执行态变为就绪态的事件是（）
+### 3. [下列选项中，会导致进程从执行态变为就绪态的事件是（）](https://www.nowcoder.com/questionTerminal/7bbb278a8c6441b9b0e5f97574f2d8d8)
 - [ ] A. 执行 P(wait) 操作
 - [ ] B. 申请内存失败
 - [ ] C. 启动 I/O 设备
 - [x] D. 被高优先级进程抢占
 
-### 4. 下列关于管道(Pipe)通信的叙述中，正确的是（）
+> **【解析】**<br>
+> 　　 A B C 都因为请求某一资源会进入阻塞态，而 D 是被剥夺了处理机资源，所以会进入就绪态，一旦得到处理机便又可运行。<br>
+
+### 4. [下列关于管道(Pipe)通信的叙述中，正确的是（）](https://www.nowcoder.com/questionTerminal/732cc78838fe42c0b78a6b23931a96b7)
 - [ ] A. 一个管道可实现双向数据传输
 - [ ] B. 管道的容量仅受磁盘容量大小限制
 - [x] C. 进程对管道进行读操作和写操作都可以被阻塞
