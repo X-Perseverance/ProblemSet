@@ -1,28 +1,47 @@
-### 1. /etc/resolv.conf 的用途是（）
+### 1. [/etc/resolv.conf 的用途是（）](https://www.nowcoder.com/questionTerminal/91ca0f351f6549e4a560bc2b4a8350f9)
 - [ ] A. 邮件服务的设置文件
 - [ ] B. DHCP 的设置文件
 - [x] C. DNS 解析的设置文件
 - [ ] D. 网络路由的设置文件
 
-### 2. 能够 PING 通同网段的节点，但却 PING 不通其他网段的所有节点的最可能原因是（）
+> **【解析】**<br>
+> 　　DNS 解析的设置文件在：`/etc/resolv.conf`<br>
+> 　　邮件服务的设置文件：`/etc/mail.rc`<br>
+> 　　DHCP 的设置文件：`/etc/dhcpd.conf`<br>
+> 　　网络路由的设置文件：`/etc/gateways`<br>
+
+### 2. [能够 ping 通同网段的节点，但却 ping 不通其他网段的所有节点的最可能原因是（）](https://www.nowcoder.com/questionTerminal/004d52649de4471896683e7aa33e0891)
 - [x] A. 本机网关设置错误
 - [ ] B. 本机没有正确设置 DNS
 - [ ] C. 对方运行的是不同的操作系统
 - [ ] D. 二层交换机故障
 
-### 3. 常被提及的 DoS 攻击是以下哪个行为（）
+> **【解析】**<br>
+> 　　A 正确，ping 是 TCP/IP 协议族的一部分，其属于网络层协议，主要是用来检测网络是否通畅，如果要 ping 其他网段则需要设置网关。<br>
+> 　　B 错误，和 DNS 没关系，DNS 设置错会影响访问公网服务器的域名，而不会影响内部子设备直接是否 ping 通。<br>
+> 　　C 错误，ping 命令是跨操作系统的，即 Windows 主机能 ping 通 Linux 主机。<br>
+> 　　D 错误，二层交换机如果出现故障那么同网段主机则不会 ping 通。<br>
+
+### 3. [常被提及的 DoS 攻击是以下哪个行为（）](https://www.nowcoder.com/questionTerminal/9855892ed9224c068dabf02a5f5f55f6)
 - [ ] A. 侵入目标服务器，获取重要数据
 - [ ] B. 采用穷举的方式获得登录账号
 - [x] C. 发送无效的请求，使得正确的请求无法被响应
 - [ ] D. 利用微软 DOS 从操作系统图的各种漏洞达到攻击的目的
 
-### 4. 以下不是 DNS 服务的作用的是（）
+> **【解析】**<br>
+> 　　[DoS 攻击介绍](https://baike.baidu.com/item/dos%E6%94%BB%E5%87%BB)<br>
+
+### 4. [以下不是 DNS 服务的作用的是（）](https://www.nowcoder.com/questionTerminal/120b9663b7804b5fbb337d4ac3a40cc3)
 - [ ] A. 将主机名翻译到指定的 IP 地址
 - [ ] B. 将 IP 地址反解成主机名
 - [ ] C. 解析特定类型的服务的地址，如MX、NS
 - [x] D. 将 IP 解析成 MAC 地址
 
-### 5. 在小红书公司的局域网中，署队长的私人电脑可以查看到同事的电脑，也成功了登录了QQ，但却无法访问到公司的站点 http://www.xiaohongshu.com ，请协助署队长查找最有可能出现问题的地方是（）
+> **【解析】**<br>
+> 　　DNS（域名系统），将域名转换为 IP 地址，也可以将 IP 地址转换为相应的域名地址。<br>
+> 　　ARP（地址解析协议），通过 IP 地址获取物理地址。<br>
+
+### 5. [在小红书公司的局域网中，署队长的私人电脑可以查看到同事的电脑，也成功了登录了QQ，但却无法访问到公司的站点 http://www.xiaohongshu.com ，请协助署队长查找最有可能出现问题的地方是（）](https://www.nowcoder.com/questionTerminal/11be1db1e87648e5b22e0d4edfe4353c)
 - [ ] A. UDP
 - [ ] B. DHCP
 - [x] C. DNS
